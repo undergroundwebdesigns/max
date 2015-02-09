@@ -1,5 +1,5 @@
-thankyou max /1e-60/
-sleep max /1e-60/
-wakeup max /1e-60/
-max /1e-15/
-buttler /1e-15/
+thankyou max /1e-75/
+sleep max /1e-75/
+wakeup max /1e-75/
+max /1e-10/
+buttler /1e-10/
