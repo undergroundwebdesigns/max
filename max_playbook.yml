@@ -1,0 +1,16 @@
+---
+- hosts: maxmaster
+  remote_user: alex
+
+  vars:
+    homebrew_taps:
+      - caskroom/cask
+      - watsonbox/cmu-sphinx
+    homebrew_installed_packages:
+      - watsonbox/cmu-sphinx/cmu-sphinxbase 
+      - watsonbox/cmu-sphinx/cmu-pocketsphinx
+      - brew-cask
+    homebrew_cask_apps:
+      - google-chrome
+  roles:
+    - { role: geerlingguy.homebrew }
