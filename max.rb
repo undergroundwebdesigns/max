@@ -32,7 +32,7 @@ wit_callback = Proc.new do|response|
     response = JSON.parse(response)
 
     response["outcomes"].each do |outcome|
-      #next if outcome["confidence"] < 0.5
+      next if outcome["confidence"] < 0.5
       case outcome["intent"]
       when "party_time"
         lights_controller.lights.each do |l|
@@ -46,7 +46,14 @@ wit_callback = Proc.new do|response|
       when "turn_on_lights"
         lights_controller.lights.each do |l| 
           l.on!
-          l.set_state({brightness: 254}, 10)
+          l.set_state({
+            brightness: 254,
+            effect: "none",
+          }, 10)
+        end
+      when "turn_off_lights"
+        lights_controller.lights.each do |l| 
+          l.off!
         end
       when "dim_bedroom_lights"
         if outcome["entities"] && outcome["entities"]["brightness"]
