@@ -25,6 +25,7 @@ GEM
     builder (3.2.2)
     colorize (0.7.3)
     cookiejar (0.3.2)
+    dotenv (1.0.2)
     em-http-request (1.1.2)
       addressable (>= 2.3.4)
       cookiejar
@@ -90,6 +91,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   espeak-ruby
   hue!
   pocketsphinx-ruby!

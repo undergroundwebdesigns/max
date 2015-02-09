@@ -34,6 +34,15 @@ wit_callback = Proc.new do|response|
     response["outcomes"].each do |outcome|
       #next if outcome["confidence"] < 0.5
       case outcome["intent"]
+      when "party_time"
+        lights_controller.lights.each do |l|
+          l.on!
+          l.set_state({
+            brightness: 255,
+            on: true,
+            effect: "colorloop",
+          }, 10)
+        end
       when "turn_on_lights"
         lights_controller.lights.each do |l| 
           l.on!
